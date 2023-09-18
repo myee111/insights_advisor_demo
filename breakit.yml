@@ -1,0 +1,23 @@
+- name: Trigger Insights Advisor 
+  hosts: all
+  become: true
+
+  tasks:
+    - when: ansible_distribution_major_version == '9'
+      block:
+        - name: Install firewalld package
+          package:
+            name: firewalld
+            state: present
+
+        - name: Restart firewalld service
+          service:
+            name: firewalld
+            state: restarted
+            enabled: yes
+
+        - name: Update Firewall backend to use iptables
+          lineinfile:
+            path: /etc/firewalld/firewalld.conf
+            regexp: '^\s*FirewallBackend='
+            line: FirewallBackend=iptables
