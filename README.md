@@ -19,3 +19,9 @@ chmod 700 bootstrap.sh
 ```
 ansible-playbook breakit.yml
 ```
+
+### Run insights-client to update Insights
+
+```
+insights-client
+```
