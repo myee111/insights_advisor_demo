@@ -25,3 +25,7 @@ ansible-playbook breakit.yml
 ```
 insights-client
 ```
+
+Here's what it should look like in Insights.
+
+![2023-09-18_13-52-25](https://github.com/myee111/insights_advisor_demo/assets/1172769/208c0798-943e-412b-bd97-8505a1c5aca2)
